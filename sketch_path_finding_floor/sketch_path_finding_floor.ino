@@ -86,14 +86,20 @@ void setup() {
     strips[i]->begin();
     strips[i]->show(); // Initialize all pixels to 'off'
   }
+  // Initialize random seed
+  randomSeed(analogRead(0));
 }
 
 // Function to light up a specific LED strip with a color for a duration
 void lightUp(int stripIndex, uint32_t color, int duration) {
-  strips[stripIndex]->setPixelColor(0, color);
+  for (int j = 0; j < LED_COUNT; j++) {
+    strips[stripIndex]->setPixelColor(j, color);
+  }
   strips[stripIndex]->show();
   delay(duration);
-  strips[stripIndex]->setPixelColor(0, 0); // Turn off
+  for (int j = 0; j < LED_COUNT; j++) {
+    strips[stripIndex]->setPixelColor(j, 0); // Turn off
+  }
   strips[stripIndex]->show();
   delay(100);
 }
@@ -112,19 +118,19 @@ void loop() {
         action = 1;
       }
       else if (state == 1) {
-        r = rand() % 3;
+        r = random(3);
         action = M[1][r];
       }
       else if (state == 2) {
-        r = rand() % 3;
+        r = random(3);
         action = M[2][r];
       }
       else if (state == 3) {
-        r = rand() % 2;
+        r = random(2);
         action = M[3][r];
       }
       else if (state == 4) {
-        r = rand() % 3;
+        r = random(3);
         action = M[4][r];
       }
       else if (state == 5) {
