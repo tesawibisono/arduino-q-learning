@@ -101,7 +101,7 @@ void lightUp(int stripIndex, uint32_t color, int duration) {
     strips[stripIndex]->setPixelColor(j, 0); // Turn off
   }
   strips[stripIndex]->show();
-  delay(100);
+  delay(500);
 }
 
 void loop() {
