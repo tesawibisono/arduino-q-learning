@@ -3,10 +3,7 @@
 // where the strips represent states, and the goal is to reach a target state.
 // The documentation and comments should help you understand the purpose and
 // functionality of each part of the code.
-//
-// *** Original Tutorial: https://alidemir1.github.io/qlearning-post/ 
-// *** Modified by Tesalonika Wibisono (info@tesalonika.com)
-
+//*** ***///
 
 // Library and Pin Definitions: Include the Adafruit NeoPixel library
 // and define the pins for each LED strip.
